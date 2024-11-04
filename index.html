@@ -4,17 +4,15 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>WebStudio</title>
+
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/3.0.1/modern-normalize.min.css"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/3.0.1/modern-normalize.css"
-      integrity="sha512-gnAN+RgTMylunXI7AMg+PtcUGpKZFkZJoFIkAWvdPFRrFJz3p2tx4+9xbjILRfN7CzoViMgS8vSf06fSQzWZjA=="
+      integrity="sha512-q6WgHqiHlKyOqslT/lgBgodhd03Wp4BEqKeW6nNtlOY4quzyG3VoQKFrieaCeSnuVseNKRGpGeDU3qPmabCANg=="
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
+
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -24,21 +22,19 @@
     <link rel="stylesheet" href="./css/styles.css" />
   </head>
   <body>
-    <header class="header-section">
+    <header id="home" class="header">
       <div class="container header_wraper">
         <nav class="header_nav">
           <a class="logo" href="./">Web<span class="accent">Studio</span></a>
           <ul class="menu">
             <li>
-              <a class="header_nav_list_item first" href="./index.html"
-                >Studio</a
-              >
+              <a class="header_nav_list_item first" href="#home">Studio</a>
             </li>
             <li>
-              <a class="header_nav_list_item" href="">Portfolio</a>
+              <a class="header_nav_list_item" href="#portfolio">Portfolio</a>
             </li>
             <li>
-              <a class="header_nav_list_item" href="">Contacts</a>
+              <a class="header_nav_list_item" href="#contacts">Contacts</a>
             </li>
           </ul>
         </nav>
@@ -56,16 +52,21 @@
             </li>
           </ul>
         </address>
+        <button class="burger-button" type="button">
+          <svg class="burger-icon">
+            <use href="./images/icons.svg#menu-btn"></use>
+          </svg>
+        </button>
       </div>
     </header>
     <main>
-      <section class="hero-section">
+      <section class="section hero">
         <div class="container">
           <h1 class="slogan">Effective Solutions for Your Business</h1>
-          <button class="order_button" type="button">Order Service</button>
+          <button class="order-button" type="button">Order Service</button>
         </div>
       </section>
-      <section class="features-section">
+      <section class="section">
         <div class="container">
           <h2 class="section-title visually-hidden">Our features</h2>
           <ul class="features-list">
@@ -120,23 +121,30 @@
           </ul>
         </div>
       </section>
-      <section class="team-section">
+      <section class="section team">
         <div class="container">
           <h2 class="section-title">Our team</h2>
           <ul class="card-list">
             <li class="team-card">
               <img
+                class="team-image"
                 width="264"
                 height="260"
+                srcset="./images/Mark.jpg 1x, ./images/Mark@2x.jpeg 2x"
                 src="./images/Mark.jpg"
-                alt="mark guerrero photo "
+                alt="Mark's Guerrero photo"
               />
               <div class="member-info">
                 <h3 class="list-title">Mark Guerrero</h3>
                 <p class="list-text">Product Designer</p>
                 <ul class="team-icons-list">
                   <li class="team-icons-item">
-                    <a class="team-icon-link" href="">
+                    <a
+                      class="team-icon-link"
+                      href="https://www.instagram.com/"
+                      target="_blank"
+                      rel="noopener no-referrer"
+                    >
                       <svg class="icon" width="16" height="16">
                         <use href="./images/icons.svg#instagram"></use>
                       </svg>
@@ -168,8 +176,10 @@
             </li>
             <li class="team-card">
               <img
+                class="team-image"
                 width="264"
                 height="260"
+                srcset="./images/Tom.jpg 1x, ./images/Tom@2x.jpeg 2x"
                 src="./images/Tom.jpg"
                 alt="tom ford photo"
               />
@@ -211,8 +221,10 @@
             </li>
             <li class="team-card">
               <img
+                class="team-image"
                 width="264"
                 height="260"
+                srcset="./images/Camila.jpg 1x, ./images/Camila@2x.jpeg 2x"
                 src="./images/Camila.jpg"
                 alt="camila garcia photo"
               />
@@ -253,8 +265,10 @@
             </li>
             <li class="team-card">
               <img
+                class="team-image"
                 width="264"
                 height="260"
+                srcset="./images/Daniel.jpg 1x, ./images/Daniel@2x.jpeg 2x"
                 src="./images/Daniel.jpg"
                 alt="daniel wilson photo"
               />
@@ -296,7 +310,7 @@
           </ul>
         </div>
       </section>
-      <section class="portfolio-section">
+      <section id="portfolio" class="section portfolio">
         <div class="container">
           <h2 class="section-title">Our Portfolio</h2>
           <ul class="card-list">
@@ -306,6 +320,10 @@
                   class="portfolio-image"
                   width="360"
                   height="300"
+                  srcset="
+                    ./images/Banking_app.jpg     1x,
+                    ./images/Banking_app@2x.jpeg 2x
+                  "
                   src="./images/Banking_app.jpg"
                   alt="banking application"
                 />
@@ -326,6 +344,10 @@
                   class="portfolio-image"
                   width="360"
                   height="300"
+                  srcset="
+                    ./images/Cashless_payment.jpg     1x,
+                    ./images/Cashless_payment@2x.jpeg 2x
+                  "
                   src="./images/Cashless_payment.jpg"
                   alt="cashless payment"
                 />
@@ -346,6 +368,10 @@
                   class="portfolio-image"
                   width="360"
                   height="300"
+                  srcset="
+                    ./images/Meditation_app.jpg     1x,
+                    ./images/Meditation_app@2x.jpeg 2x
+                  "
                   src="./images/Meditation_app.jpg"
                   alt="application for meditation"
                 />
@@ -366,6 +392,10 @@
                   class="portfolio-image"
                   width="360"
                   height="300"
+                  srcset="
+                    ./images/Taxi_service.jpg     1x,
+                    ./images/Taxi_service@2x.jpeg 2x
+                  "
                   src="./images/Taxi_service.jpg"
                   alt="taxi service"
                 />
@@ -386,6 +416,10 @@
                   class="portfolio-image"
                   width="360"
                   height="300"
+                  srcset="
+                    ./images/Screen_illustrations.jpg     1x,
+                    ./images/Screen_illustrations@2x.jpeg 2x
+                  "
                   src="./images/Screen_illustrations.jpg"
                   alt="screen illustrations"
                 />
@@ -406,6 +440,10 @@
                   class="portfolio-image"
                   width="360"
                   height="300"
+                  srcset="
+                    ./images/Online_courses.jpg     1x,
+                    ./images/Online_courses@2x.jpeg 2x
+                  "
                   src="./images/Online_courses.jpg"
                   alt="online courses"
                 />
@@ -424,7 +462,7 @@
         </div>
       </section>
     </main>
-    <footer class="footer-section">
+    <footer id="contacts" class="footer-section">
       <div class="container footer-container">
         <div class="footer-description">
           <a class="logo" href="./index.html"
@@ -476,9 +514,11 @@
                 class="email-input"
                 name="user-email"
                 type="email"
-                placeholder="E-mail"/>
+                placeholder="E-mail"
+              />
             </label>
-            <button class="footer-button" type="submit">Subscribe
+            <button class="footer-button" type="submit">
+              Subscribe
               <svg class="footer-send-icon" width="24" height="24">
                 <use href="./images/icons.svg#send"></use>
               </svg>
@@ -488,7 +528,7 @@
       </div>
     </footer>
 
-    <div class="modal-overlay is-open">
+    <div class="modal-overlay">
       <div class="modal">
         <button class="button-close" type="button">
           <svg class="icon" width="8" height="8">
@@ -557,19 +597,86 @@
               name="user-privacy"
               class="form-input visually-hidden"
             />
-            <label for="user-privacy" class="form-check-label"
-              > <span
-                class="privacy-icon">
+            <label for="user-privacy" class="form-check-label">
+              <span class="privacy-icon">
                 <svg width="10" height="8" class="policy-icon">
                   <use href="./images/icons.svg#checkbox"></use>
-                </svg>
-              </span>I accept the terms and conditions of the <a class="privacy-policy-link" href="">Privacy Policy</a>
-              
+                </svg> </span
+              >I accept the terms and conditions of the
+              <a class="privacy-policy-link" href="">Privacy Policy</a>
             </label>
           </div>
           <button class="button-submit" type="submit">Send</button>
         </form>
       </div>
     </div>
+
+    <div class="burger">
+      <div class="container">
+        <button class="burger-button-close" type="button">
+          <svg class="icon" width="8" height="8">
+            <use href="./images/icons.svg#close"></use>
+          </svg>
+        </button>
+        <ul class="burger-menu">
+          <li>
+            <a class="burger-menu-list-item" href="#home">Studio</a>
+          </li>
+          <li>
+            <a class="burger-menu-list-item" href="#portfolio">Portfolio</a>
+          </li>
+          <li>
+            <a class="burger-menu-list-item" href="#contacts">Contacts</a>
+          </li>
+        </ul>
+        <address class="burger-contacts">
+          <ul class="burger-contacts-list">
+            <li class="burger-item">
+              <a class="contacts-link" href="tel:+110001111111"
+                >+11 (000) 111-11-11</a
+              >
+            </li>
+            <li class="burger-item">
+              <a class="contacts-link" href="mailto:info@devstudio.com"
+                >info@devstudio.com</a
+              >
+            </li>
+          </ul>
+        </address>
+        <ul class="burger-socials-list">
+          <li class="socials-items">
+            <a class="burger-icon-link" href="">
+              <svg class="icon" width="24" height="24">
+                <use href="./images/icons.svg#instagram"></use>
+              </svg>
+            </a>
+          </li>
+          <li class="socials-items">
+            <a class="burger-icon-link" href="">
+              <svg class="icon" width="24" height="24">
+                <use href="./images/icons.svg#twitter"></use>
+              </svg>
+            </a>
+          </li>
+          <li class="socials-items">
+            <a class="burger-icon-link" href="">
+              <svg class="icon" width="24" height="24">
+                <use href="./images/icons.svg#facebook"></use>
+              </svg>
+            </a>
+          </li>
+          <li class="socials-items">
+            <a class="burger-icon-link" href="">
+              <svg class="icon" width="24" height="24">
+                <use href="./images/icons.svg#linkedin"></use>
+              </svg>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <script src="./js/modal.js"></script>
+    <script src="./js/burger.js"></script>
   </body>
 </html>
