@@ -191,16 +191,8 @@ header .header_nav {
   font-style: normal;
 }
 
-.contacts_list {
+.contacts-list {
   display: none;
-}
-
-.contacts a {
-  font-size: 16px;
-  line-height: 1.5;
-  letter-spacing: 0.02em;
-  color: var(--text);
-  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .contacts a:hover,
@@ -232,9 +224,19 @@ header .header_nav {
     display: none;
   }
 
-  .contacts_list {
+  .contacts-list {
     display: flex;
     flex-direction: column;
+    gap: 12px;
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .contacts-link {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 117%;
+    letter-spacing: 0.04em;
+    color: var(--text);
   }
 }
 
@@ -243,12 +245,19 @@ header .header_nav {
     margin-right: 76px;
   }
 
-  .contacts_list {
+  .contacts-list {
     display: flex;
     flex-direction: row;
     gap: 40px;
   }
+
+  .contacts-link {
+    font-size: 16px;
+    line-height: 150%;
+    letter-spacing: 0.02em;
+  }
 }
+
 /* hero section */
 
 .hero {
@@ -257,11 +266,11 @@ header .header_nav {
       rgba(46, 47, 66, 0.7),
       rgba(46, 47, 66, 0.7)
     ),
-    url('../images/hero-image.jpg');
+    url('../images/hero-image-mobile/hero-image.jpg');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-  max-width: 1440px;
+  max-width: 320px;
   margin: 0 auto;
   padding: 72px 0;
 }
@@ -273,7 +282,7 @@ header .header_nav {
         rgba(46, 47, 66, 0.7),
         rgba(46, 47, 66, 0.7)
       ),
-      url('../images/hero-image@2x.jpeg');
+      url('../images/hero-image-mobile/hero-image@2x.jpg');
   }
 }
 
@@ -308,6 +317,24 @@ header .header_nav {
 @media (min-width: 768px) {
   .hero {
     padding: 112px 0;
+    background-image: linear-gradient(
+        to bottom,
+        rgba(46, 47, 66, 0.7),
+        rgba(46, 47, 66, 0.7)
+      ),
+      url('../images/hero-image-tablet/hero-image.jpg');
+    max-width: 768px;
+  }
+
+  @media (min-resolution: 192dpi) {
+    .hero {
+      background-image: linear-gradient(
+          to bottom,
+          rgba(46, 47, 66, 0.7),
+          rgba(46, 47, 66, 0.7)
+        ),
+        url('../images/hero-image-tablet/hero-image@2x.jpg');
+    }
   }
 
   .slogan {
@@ -321,6 +348,24 @@ header .header_nav {
 @media (min-width: 1158px) {
   .hero {
     padding: 188px 0;
+    background-image: linear-gradient(
+        to bottom,
+        rgba(46, 47, 66, 0.7),
+        rgba(46, 47, 66, 0.7)
+      ),
+      url('../images/hero-image-desktop/hero-image.jpg');
+    max-width: 1440px;
+  }
+
+  @media (min-resolution: 192dpi) {
+    .hero {
+      background-image: linear-gradient(
+          to bottom,
+          rgba(46, 47, 66, 0.7),
+          rgba(46, 47, 66, 0.7)
+        ),
+        url('../images/hero-image-desktop/hero-image@2x.jpeg');
+    }
   }
 
   .slogan {
@@ -540,11 +585,7 @@ header .header_nav {
 
 .portfolio-card {
   transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.portfolio-card:hover {
-  box-shadow: 0 2px 1px 0 rgba(46, 47, 66, 0.08),
-    0 1px 1px 0 rgba(46, 47, 66, 0.16), 0 1px 6px 0 rgba(46, 47, 66, 0.08);
+  box-shadow: 0 1px 6px 0 rgba(46, 47, 66, 0.08);
 }
 
 .portfolio .card-list {
@@ -561,24 +602,7 @@ header .header_nav {
 }
 
 .portfolio-overlay {
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 1.5;
-  letter-spacing: 0.02em;
-  color: var(--light);
-  padding: 40px 32px;
-  background-color: var(--primary-brand);
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  transform: translateY(100%);
-  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.portfolio-card:hover .portfolio-overlay {
-  transform: translateY(0);
+  display: none;
 }
 
 .info {
@@ -617,6 +641,33 @@ header .header_nav {
 @media (min-width: 1158px) {
   .portfolio-card {
     flex-basis: calc((100% - 48px) / 3);
+  }
+
+  .portfolio-card:hover {
+    box-shadow: 0 2px 1px 0 rgba(46, 47, 66, 0.08),
+      0 1px 1px 0 rgba(46, 47, 66, 0.16), 0 1px 6px 0 rgba(46, 47, 66, 0.08);
+  }
+
+  .portfolio-overlay {
+    display: block;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.5;
+    letter-spacing: 0.02em;
+    color: var(--light);
+    padding: 40px 32px;
+    background-color: var(--primary-brand);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transform: translateY(100%);
+    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .portfolio-card:hover .portfolio-overlay {
+    transform: translateY(0);
   }
 
   .portfolio-image {
@@ -713,7 +764,7 @@ header .header_nav {
 .email-input {
   border: 1px solid var(--main-bgc);
   border-radius: 4px;
-  width: 264px;
+  width: 288px;
   height: 40px;
   background-color: transparent;
   box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.15);
@@ -775,6 +826,10 @@ header .header_nav {
   .footer-form {
     flex-direction: row;
     gap: 24px;
+  }
+
+  .email-input {
+    width: 264px;
   }
 }
 
@@ -1034,9 +1089,13 @@ header .header_nav {
     visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.container {
+.mobile-container {
   position: relative;
   height: 100%;
+  padding-top: 72px;
+  padding-bottom: 40px;
+  display: flex;
+  flex-direction: column;
 }
 
 .burger-button-close {
@@ -1068,8 +1127,14 @@ header .header_nav {
   transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+.burger-nav {
+  margin-bottom: auto;
+}
+
 .burger-menu {
-  margin: 72px 0 168px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
 }
 
 .burger-menu-list-item {
@@ -1080,7 +1145,6 @@ header .header_nav {
   line-height: 1.11;
   letter-spacing: 0.02em;
   transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
-  margin-bottom: 16px;
 }
 
 .burger-menu-list-item:hover,
@@ -1088,14 +1152,14 @@ header .header_nav {
   color: var(--pressed-state);
 }
 
-.burger-contacts-list {
+.burger-contacts {
   margin-bottom: 48px;
 }
 
-.contacts-link {
+.burger-contacts-link {
   color: var(--text);
-  font-weight: 500;
   font-size: 20px;
+  font-weight: 500;
   line-height: 120%;
   letter-spacing: 0.02em;
   transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
@@ -1113,7 +1177,6 @@ header .header_nav {
 .burger-socials-list {
   display: flex;
   flex-direction: row;
-  justify-content: center;
   gap: 40px;
 }
 
@@ -1135,6 +1198,10 @@ header .header_nav {
 
 .burger .icon {
   fill: var(--light);
+}
+
+.burger-button-close .icon {
+  fill: var(--dark-color);
 }
 
 @media (min-width: 768px) {
