@@ -24,5 +24,5 @@ project focuses on clean semantic markup and high loading speeds.
 
 1. Clone the repository:
    ```bash
-   git clone [https://github.com/DevScriber/WebStudio.git](https://github.com/DevScriber/WebStudio.git)
+   git clone https://github.com/DevScriber/WebStudio.git
    ```
